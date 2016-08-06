@@ -362,7 +362,7 @@
    -ms-transform: translate(50%, -50%) rotate(0deg);
 }
 
-body {
+#main_body {
    background-image: url('options.jpeg');
    background-position: center;
    background-size: cover;
@@ -371,7 +371,7 @@ body {
    font-family: 'Roboto', sans-serif;
 }
 
-body,
+#main_body,
 html {
    overflow: hidden;
 }
@@ -398,4 +398,12 @@ html {
    text-decoration: none;
    list-style-type: none;
    outline: none;
+}
+
+/*======================================================*/
+/*profile page*/
+/*======================================================*/
+
+ #profile_body{
+background-color: red;
 }
