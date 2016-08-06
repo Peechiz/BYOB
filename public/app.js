@@ -1,4 +1,25 @@
 var app = angular.module( "myApp", [ 'ngRoute' ] );
+
+// app.config( function ( $routeProvider ) {
+//     $routeProvider.when( '/', {
+//         templateUrl: 'partials/home.html',
+//         controller: 'HomeController'
+//     } ).
+//     when( '/dogs', {
+//         templateUrl: 'partials/profile.html',
+//         controller: 'ProfileController'
+//     } );
+// } );
+//
+// app.controller( 'HomeController', function ( $scope ) {
+//     console.log( 'hey' );
+//     $scope.view = {};
+//     $scope.view.message = "testing here!"
+// } );
+
+
+
+
 $( function () {
 
     $( ".input input" ).focus( function () {
