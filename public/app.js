@@ -1,26 +1,5 @@
-var app = angular.module( "myApp", [ 'ngRoute' ] );
-
-// app.config( function ( $routeProvider ) {
-//     $routeProvider.when( '/', {
-//         templateUrl: 'partials/home.html',
-//         controller: 'HomeController'
-//     } ).
-//     when( '/dogs', {
-//         templateUrl: 'partials/profile.html',
-//         controller: 'ProfileController'
-//     } );
-// } );
-//
-// app.controller( 'HomeController', function ( $scope ) {
-//     console.log( 'hey' );
-//     $scope.view = {};
-//     $scope.view.message = "testing here!"
-// } );
-
-
-
-
 $( function () {
+    console.log( "here here" );
 
     $( ".input input" ).focus( function () {
 
@@ -41,6 +20,7 @@ $( function () {
         } )
         if ( $( this ).val() == "" ) {
             $( this ).parent( ".input" ).each( function () {
+                console.log( "this thing" );
                 $( "label", this ).css( {
                     "line-height": "60px",
                     "font-size": "24px",
@@ -57,6 +37,7 @@ $( function () {
             pY = e.pageY,
             oX = parseInt( $( this ).offset().left ),
             oY = parseInt( $( this ).offset().top );
+        console.log( "button working here" );
 
         $( this ).append( '<span class="click-efect x-' + oX + ' y-' + oY + '" style="margin-left:' + ( pX - oX ) + 'px;margin-top:' + ( pY - oY ) + 'px;"></span>' )
         $( '.x-' + oX + '.y-' + oY + '' ).animate( {

@@ -29,6 +29,8 @@
 
     <body id="main_body">
 
+        <script src="./scripts/angular.js"></script>
+
         <nav>
             <div class="nav-wrapper">
                 <a href="#" class="brand-logo"><i class="fa fa-beer" aria-hidden="true"> BYOB</i></a>
@@ -39,15 +41,11 @@
                 </ul>
             </div>
         </nav>
-
         <div ng-view></div>
 
         <div class="materialContainer">
-
             <div class="box">
-
                 <div class="title">LOGIN</div>
-
                 <div class="input">
                     <label for="name">Username</label>
                     <input type="text" name="name" id="name">
@@ -61,7 +59,7 @@
                 </div>
 
                 <div class="button login">
-                    <button><span>GO</span> <i class="fa fa-check"></i></button>
+                    <a href="/profile.html"><span>GO</span> <i class="fa fa-check"></i></a>
                 </div>
 
                 <a href="" class="pass-forgot">Forgot your password?</a>
@@ -92,13 +90,14 @@
                 </div>
 
                 <div class="button">
-                    <button ng-click="openWindow()"><span>NEXT</span></button>
+                    <button><span>NEXT</span></button>
+
+
                 </div>
-
-
             </div>
-
         </div>
+
+
         <script>
             require('./index.js');
 
@@ -107,3 +106,4 @@
     </body>
 
 </html>
+html>
