@@ -4,10 +4,68 @@
     <head>
         <meta charset="utf-8">
         <title>profile</title>
+        <!-- jquery -->
+        <script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
+        <!-- AngularJs -->
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-route.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-resource.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.js"></script>
+        <!-- fontawesome -->
+        <script src="https://use.fontawesome.com/405a0adae2.js"></script>
+
+        <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900&subset=latin,latin-ext" rel="stylesheet">
+
+        <link rel="stylesheet" href="../css/main.css">
+
+        <script src="../app.js"></script>
+        <script src="../angular.js"></script>
+
+
     </head>
 
-    <body>
-        <h1>profile</h1>
+    <body id="profile_body">
+        <nav>
+            <div class="nav-wrapper">
+                <a href="#" class="brand-logo"><i class="fa fa-beer" aria-hidden="true"> BYOB</i></a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href=""> Drink</a></li>
+                    <li><a href="">Drank</a></li>
+                    <li><a href=""> Friends</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="row">
+            <img class="img" src="http://floridapolitics.com/wp-content/uploads/2015/07/beer.jpg">
+
+        </div>
+
+        <div class="container">
+            <form class="col s6">
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input id="beer_name" type="text" class="validate">
+                        <label for="beer_name">Beer Name</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input id="brewery" type="text" class="validate">
+                        <label for="brewery">Brewery</label>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div>
+            {{view.message}}
+        </div>
 
     </body>
 

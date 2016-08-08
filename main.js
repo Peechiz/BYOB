@@ -1,6 +1,7 @@
 'use strict'
 
 const electron = require( 'electron' );
+
 const { app, BrowserWindow } = electron;
 
 app.on( 'ready', () => {
@@ -9,8 +10,9 @@ app.on( 'ready', () => {
     win.openDevTools();
 } );
 
+
 exports.openWindow = () => {
     let win = new BrowserWindow( { width: 900, height: 800 } )
-    win.loadURL( `file://${__dirname}/profile.html` );
+    win.loadURL( `file://${__dirname}/index.html` );
     win.openDevTools();
 }
