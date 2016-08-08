@@ -1,6 +1,5 @@
 var app = angular.module( "myApp", [ 'ngRoute' ] );
 
-
 console.log( "angular here" );
 
 app.config( function ( $routeProvider ) {
@@ -9,10 +8,10 @@ app.config( function ( $routeProvider ) {
         controller: 'HomeController'
     } )
 
-    .when( '/profile', {
-        templateUrl: 'public/partials/profile.html',
-        controller: 'ProfileController'
-    } );
+    //  .when( '/profile', {
+    //      templateUrl: 'public/partials/profile.html',
+    //      controller: 'ProfileController'
+    //  } );
 } );
 
 app.controller( 'HomeController', function ( $scope ) {
@@ -20,7 +19,7 @@ app.controller( 'HomeController', function ( $scope ) {
     $scope.view = {};
     $scope.view.message = "testing here!"
 } );
-
-app.controller( "ProfileController", function ( $scope ) {
-    console.log( "profile here" );
-} );
+//
+// app.controller( "ProfileController", function ( $scope ) {
+//     console.log( "profile here" );
+// } );

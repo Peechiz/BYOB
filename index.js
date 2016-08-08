@@ -8,4 +8,4 @@ button.addEventListener( 'click', () => {
 }, false )
 
 button.textContent = 'open window';
-// document.body.appendChild( button )
+document.body.appendChild( button )

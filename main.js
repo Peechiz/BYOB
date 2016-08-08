@@ -11,6 +11,6 @@ app.on( 'ready', () => {
 
 exports.openWindow = () => {
     let win = new BrowserWindow( { width: 900, height: 800 } )
-    win.loadURL( `file://${__dirname}/public/partials/profile.html` );
+    win.loadURL( `file://${__dirname}/profile.html` );
     win.openDevTools();
 }
