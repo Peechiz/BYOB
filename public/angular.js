@@ -9,8 +9,13 @@ app.config( function ( $routeProvider ) {
     } )
 
     .when( '/profile', {
-        templateUrl: '/partials/profile.html',
+        templateUrl: 'partials/profile.html',
         controller: 'ProfileController'
+    } )
+
+    .when( '/beer', {
+        templateUrl: '/public/partials/beer.html',
+        controller: 'BeerController'
     } );
 } );
 
@@ -60,3 +65,15 @@ app.controller( "ProfileController", function ( $scope ) {
     }
 
 } );
+
+app.controller( 'BeerController', function ( $scope ) {
+    console.log( "beer here" );
+} );
+
+app.controller( 'FriendsController', function ( $scope ) {
+    console.log( "friends here" );
+} )
+
+app.controller( 'partyController', function ( $scope ) {
+    console.log( "Lets party" );
+} )
