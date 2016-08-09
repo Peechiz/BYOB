@@ -1,3 +1,8 @@
+$( document ).ready( function () {
+    Materialize.updateTextFields();
+} );
+
+
 $( function () {
     console.log( "here here" );
 
