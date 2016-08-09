@@ -1,4 +1,13 @@
 
+html {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+
 
 .box {
    position: relative;
@@ -466,14 +475,4 @@ table{
   text-align: center;
   color: #9e9e9e;
   padding: 10px;
-}
-
-
-html {
-    width: 100%;
-    height: 100%;
-    margin: 0px;
-    padding: 0px;
-    overflow-x: hidden;
-    box-sizing: border-box;
 }

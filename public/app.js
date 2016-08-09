@@ -1,9 +1,11 @@
 $.ajax( {
-    url: "http://api.brewerydb.com/v2/?key= 4d9a0f8e023cb078745503782cabc979",
-    dataType: "jsonp",
+    url: "http://api.brewerydb.com/v2/?key=4d9a0f8e023cb078745503782cabc979",
+    dataType: "jsonp"
     success: function ( parsed_json ) {
         var beer_name = parsed_json[ 'beer_name' ];
         var brewery = parsed_json[ 'brewery' ];
+        var abn = parsed_json[ 'abn' ];
+        var style = parsed_json[ 'style' ]
 
     }
 } );

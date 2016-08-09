@@ -13,6 +13,8 @@
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-route.js"></script>
         <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-resource.js"></script>
         <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.js"></script>
+
         <!-- fontawesome -->
         <script src="https://use.fontawesome.com/405a0adae2.js"></script>
         <!-- google icons -->
@@ -47,9 +49,39 @@
             </nav>
         </header>
 
-        <div class="beer_name">
+        <div class="row">
+            <form class="col s12">
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input id="beer_name" type="text">
+                        <label for="beer_name">Beer Name</label>
+                    </div>
+                </div>
 
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input id="brewery" type="text">
+                        <label for="brewery">Brewery</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input id="abn" type="text">
+                        <label for="abn">A.B.N</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input id="style" type="text" class="validate">
+                        <label for="style">Style</label>
+                    </div>
+                </div>
+            </form>
         </div>
+
+
 
         <footer class="page-footer grey darken-4" id="footer">
             <div class="container">
