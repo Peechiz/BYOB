@@ -25,24 +25,28 @@ app.controller( "ProfileController", function ( $scope ) {
     $scope.view = {};
     $scope.view.message = "testing profile!";
     $scope.view.name = "Jack";
-    $scope.searchBeer = '';
+    $scope.data = {};
+    $scope.data.searchbeer = '';
 
     $scope.beers = [
         {
             name: 'Zoe',
             brewery: 'Hops and Grain Brewing',
-            style: 'Amber'
+            style: 'Amber',
+            price: 3.50
       },
 
         {
             name: 'Sierra Nevada',
             brewery: 'Sierra Nevada Brewery',
-            style: 'Pale Ale'
+            style: 'Pale Ale',
+            price: 4.00
       },
         {
             name: 'Shock Top Belgium Wht',
             brewery: 'Anheuser-Busch',
-            style: 'Witbier'
+            style: 'Witbier',
+            price: 5.00
       }
    ];
 

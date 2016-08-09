@@ -15,6 +15,8 @@
         <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.js"></script>
         <!-- fontawesome -->
         <script src="https://use.fontawesome.com/405a0adae2.js"></script>
+        <!-- google icons -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
         <!-- Compiled and minified CSS -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
@@ -73,25 +75,26 @@
                 </div>
             </div>
 
-            <div class="container searchBeer center-align" ng-if="showMe">
-                <form name="searchBeer" role="search">
-                    <div class="row center-align">
-                        <div class="form-group">
-                            <div class="input-field col s8 center-align">
-                                <input id="beer_name" type="text" class="form-control" ng-model="searchBeer.name">
+            <!-- search for beer -->
+            <div class="container searchbeer center-align" ng-if="showMe">
+                <form role="search">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-field col s8">
+                                <input type="text" ng-model="data.searchbeer">
                                 <label class="active" for="beer_name">Beer Name</label>
                             </div>
                         </div>
                     </div>
-                    <div class="row">
+                    <!-- <div class="row">
                         <div class="form-group">
                             <div class="input-field col s8">
-                                <input id="brewery" type="text" class="form-control" ng-model="searchBeer.brewery">
+                                <input type="text" ng-model="searchbeer">
                                 <label class="active" for="brewery">Brewery</label>
                             </div>
                             <a class="waves-effect waves-light btn center-align">Find beer</a>
                         </div>
-                    </div>
+                    </div> -->
                 </form>
             </div>
 
@@ -101,14 +104,21 @@
                         <th data-field="name">Beer Name</th>
                         <th data-field="brewery">Brewery</th>
                         <th data-field="style">Style</th>
+                        <th data-field="price">Price</th>
+                        <th data-field="delete"></th>
+
                     </tr>
                 </thead>
 
-                <tbody ng-repeat="beer in beers | filter:searchBeer">
+                <tbody ng-repeat="beer in beers | filter:data.searchbeer">
                     <tr>
                         <td><a href="#">{{beer.name}}</a></td>
                         <td><a href="#">{{beer.brewery}}</a></td>
                         <td><a href="#">{{beer.style}}</a></td>
+                        <td><a href="#">{{beer.price}}</a></td>
+                        <td><a><i class="material-icons">delete_forever</i></a></td>
+
+
                     </tr>
 
                 </tbody>
@@ -143,20 +153,5 @@
         </div>
 
     </body>
-
-</html>
-</footer>
-</div>
-
-</body>
-
-</html>
-</body>
-
-</html>
-</footer>
-</div>
-
-</body>
 
 </html>
