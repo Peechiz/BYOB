@@ -36,9 +36,9 @@
                 <div class="nav-wrapper orange">
                     <a href="#" class="brand-logo"><i class="fa fa-beer" aria-hidden="true"> BYOB</i></a>
                     <ul id="nav-mobile" class="right hide-on-med-and-down">
-                        <li><a href=""> Drink</a></li>
-                        <li><a href="">Drank</a></li>
+                        <li><a href="">Drink</a></li>
                         <li><a href=""> Friends</a></li>
+                        <li><a href="../index.html"> Log Out</a></li>
                     </ul>
                 </div>
             </nav>
@@ -95,11 +95,24 @@
                 </form>
             </div>
 
-            <div class="collection" ng-repeat="beer in beers | filter:searchBeer">
-                <a href="#!" class="collection-item">{{beer.name}}</a>
-                <a href="#!" class="collection-item">{{beer.brewery}}</a>
-                <a href="#!" class="collection-item">{{beer.style}}</a>
-            </div>
+            <table class="highlight bordered responsive-table">
+                <thead>
+                    <tr>
+                        <th data-field="name">Beer Name</th>
+                        <th data-field="brewery">Brewery</th>
+                        <th data-field="style">Style</th>
+                    </tr>
+                </thead>
+
+                <tbody ng-repeat="beer in beers | filter:searchBeer">
+                    <tr>
+                        <td><a href="#">{{beer.name}}</a></td>
+                        <td><a href="#">{{beer.brewery}}</a></td>
+                        <td><a href="#">{{beer.style}}</a></td>
+                    </tr>
+
+                </tbody>
+            </table>
 
             <h1>more beer</h1>
             <footer class="page-footer">
@@ -130,5 +143,20 @@
         </div>
 
     </body>
+
+</html>
+</footer>
+</div>
+
+</body>
+
+</html>
+</body>
+
+</html>
+</footer>
+</div>
+
+</body>
 
 </html>
