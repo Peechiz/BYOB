@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="myApp">
 
     <head>
         <meta charset="utf-8">
@@ -7,10 +7,10 @@
         <!-- jquery -->
         <script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
         <!-- AngularJs -->
-        <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-route.js"></script>
         <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-resource.js"></script>
-        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.js"></script> -->
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.js"></script>
         <!-- fontawesome -->
         <script src="https://use.fontawesome.com/405a0adae2.js"></script>
 
@@ -23,12 +23,12 @@
         <link rel="stylesheet" href="../css/main.css">
 
         <script src="../app.js"></script>
-        <!-- <script src="../angular.js"></script> -->
+        <script src="../angular.js"></script>
 
 
     </head>
 
-    <body id="profile_body">
+    <body id="profile_body" ng-controller="ProfileController">
         <nav>
             <div class="nav-wrapper">
                 <a href="#" class="brand-logo"><i class="fa fa-beer" aria-hidden="true"> BYOB</i></a>
@@ -41,8 +41,12 @@
         </nav>
 
         <div class="row">
-            <img class="img" src="http://floridapolitics.com/wp-content/uploads/2015/07/beer.jpg">
-
+            <div class="col s6">
+                <img class="img" src="http://floridapolitics.com/wp-content/uploads/2015/07/beer.jpg">
+            </div>
+            <div class="col s6">
+                <h1>{{view.message}}</h1>
+            </div>
         </div>
 
         <div class="container">
