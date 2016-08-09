@@ -27,6 +27,7 @@ app.controller( "ProfileController", function ( $scope ) {
     $scope.view.name = "Jack";
     $scope.data = {};
     $scope.data.searchbeer = '';
+    $scope.data.searchBrewery = '';
 
     $scope.beers = [
         {
