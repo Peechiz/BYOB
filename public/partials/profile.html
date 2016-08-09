@@ -28,7 +28,7 @@
 
     </head>
 
-    <body id="profile_body" ng-controller="ProfileController">
+    <body id="profile_body" ng-controller="ProfileController as myApp">
         <nav>
             <div class="nav-wrapper">
                 <a href="#" class="brand-logo"><i class="fa fa-beer" aria-hidden="true"> BYOB</i></a>
@@ -43,13 +43,17 @@
         <div class="row">
             <div class="col s6">
                 <img class="img" src="http://floridapolitics.com/wp-content/uploads/2015/07/beer.jpg">
-            </div>
-            <div class="col s6">
-                <h1>{{view.message}}</h1>
+                <h3>{{view.name}}</h3>
             </div>
         </div>
 
-        <div class="container">
+        <div class="col s6">
+            <h1>Buy these...</h1>
+            <a ng-click="hide()" class="btn-floating btn-large waves-effect waves-light red"><i class="fa fa-plus fa-5x" aria-hidden="true"></i></a>
+
+        </div>
+
+        <div class="container" ng-if="showMe">
             <form class="col s6">
                 <div class="row">
                     <div class="input-field col s6">
@@ -68,7 +72,6 @@
 
             </form>
         </div>
-        <a class="btn-floating btn-large waves-effect waves-light red"><i class="fa fa-plus fa-5x" aria-hidden="true"></i></a>
 
 
         <a></a>

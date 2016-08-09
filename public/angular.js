@@ -23,6 +23,11 @@ app.controller( 'HomeController', function ( $scope ) {
 app.controller( "ProfileController", function ( $scope ) {
     console.log( "profile here" );
     $scope.view = {};
-    $scope.view.message = "testing profile!"
+    $scope.view.message = "testing profile!";
+    $scope.view.name = "Jack";
+
+    $scope.hide = function () {
+        $scope.showMe = !$scope.showMe;
+    }
 
 } );
