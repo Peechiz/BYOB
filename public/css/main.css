@@ -269,7 +269,7 @@
    position: absolute;
    top: 0;
    left: 0;
-   overflow: inherit;
+   /*overflow: inherit;*/
    border-radius: 10px;
    padding: 60px 50px 40px 50px;
 }
@@ -372,10 +372,8 @@
    font-family: 'Roboto', sans-serif;
 }
 
-#main_body,
-html {
-   overflow: hidden;
-}
+/*#main_body,*/
+
 
 .materialContainer {
    width: 100%;
@@ -405,9 +403,10 @@ html {
 /*profile page*/
 /*======================================================*/
 
-/*#profile_body{
-background-color: red;
-}*/
+#profile_body{
+padding: 20px;
+margin: 20px;
+}
 
 .img{
   height: 200px;

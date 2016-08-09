@@ -25,6 +25,26 @@ app.controller( "ProfileController", function ( $scope ) {
     $scope.view = {};
     $scope.view.message = "testing profile!";
     $scope.view.name = "Jack";
+    $scope.searchBeer = '';
+
+    $scope.beers = [
+        {
+            name: 'Zoe',
+            brewery: 'Hops and Grain Brewing',
+            style: 'Amber'
+      },
+
+        {
+            name: 'Sierra Nevada',
+            brewery: 'Sierra Nevada Brewery',
+            style: 'Pale Ale'
+      },
+        {
+            name: 'Shock Top Belgium Wht',
+            brewery: 'Anheuser-Busch',
+            style: 'Witbier'
+      }
+   ];
 
     $scope.hide = function () {
         $scope.showMe = !$scope.showMe;
