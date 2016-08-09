@@ -69,9 +69,8 @@
             <div class="container center-align">
                 <div class="row">
                     <div class="col s6">
-                        <!-- <h1>Add a new Beer</h1> -->
-                        <a class="btn-floating btn-large waves-effect waves-light red"><i class="fa fa-plus fa-5x" aria-hidden="true"></i></a>
-                        <form>
+                        <a ng-click="hide()" class="btn-floating btn-large waves-effect waves-light red"><i class="fa fa-plus fa-5x" aria-hidden="true"></i></a>
+                        <form ng-if="showMe">
                             <div class="row form-group">
                                 <div class="input-group">
                                     <div class="input-field col s8">
@@ -90,11 +89,11 @@
 
                     <!-- search for beer -->
                     <div class="col s6">
-                        <a ng-click="hide()" class="btn-floating btn-large red">
+                        <a ng-click="form()" class="btn-floating btn-large red">
                             <i class="fa fa-search" aria-hidden="true"></i></a>
 
-                        <div class="container searchbeer center-align" ng-if="showMe">
-                            <form role="search">
+                        <div class="container searchbeer center-align">
+                            <form role="search" ng-if="hideMe">
                                 <div class="row form-group">
                                     <div class="input-group">
                                         <div class="input-field col s8">

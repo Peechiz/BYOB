@@ -55,4 +55,8 @@ app.controller( "ProfileController", function ( $scope ) {
         $scope.showMe = !$scope.showMe;
     }
 
+    $scope.form = function () {
+        $scope.hideMe = !$scope.hideMe;
+    }
+
 } );
