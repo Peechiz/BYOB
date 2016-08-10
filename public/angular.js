@@ -1,4 +1,4 @@
-var app = angular.module( "myApp", [ 'ngRoute' ] );
+var app = angular.module( "myApp", [ 'ngMaterial', 'ngRoute' ] );
 
 
 console.log( "angular working here" );
@@ -40,20 +40,20 @@ app.controller( "ProfileController", function ( $scope ) {
             name: 'Zoe',
             brewery: 'Hops and Grain Brewing',
             style: 'Amber',
-            price: 3.50
+            abn: 3.50
       },
 
         {
             name: 'Sierra Nevada',
             brewery: 'Sierra Nevada Brewery',
             style: 'Pale Ale',
-            price: 4.00
+            abn: 4.00
       },
         {
             name: 'Shock Top Belgium Wht',
             brewery: 'Anheuser-Busch',
             style: 'Witbier',
-            price: 5.00
+            abn: 5.00
       }
    ];
 
@@ -73,10 +73,13 @@ app.controller( 'BeerController', function ( $scope ) {
     $scope.data = {};
     $scope.data.searchbeers = '';
     $scope.data.searchBreweries = '';
+    $scope.currentNavItem = "";
 
     function newBeer( beer ) {
         console.log( "im a new beer!" );
     }
+
+
 
     $scope.hide = function () {
         $scope.showMe = !$scope.showMe;

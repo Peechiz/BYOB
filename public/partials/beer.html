@@ -13,21 +13,19 @@
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-route.js"></script>
         <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-resource.js"></script>
         <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.js"></script>
-        <!-- <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-aria.min.js"></script> -->
-        <!-- <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-messages.min.js"></script> -->
-        <!-- <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.js"></script> -->
-
-
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-aria.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-messages.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.js"></script>
 
         <!-- fontawesome -->
         <script src="https://use.fontawesome.com/405a0adae2.js"></script>
         <!-- google icons -->
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-        <!-- Compiled and minified CSS -->
+        <!--  Compiled and minified CSS -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
         <!-- Compiled and minified JavaScript -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+
         <link href="https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900&subset=latin,latin-ext" rel="stylesheet">
 
         <link rel="stylesheet" href="../css/main.css">
@@ -45,11 +43,21 @@
                 <div class="nav-wrapper orange darken-4">
                     <a href="../index.html" class="brand-logo"><i class="fa fa-beer" aria-hidden="true"> BYOB</i></a>
                     <ul id="nav-mobile" class="right hide-on-med-and-down">
-                        <li><a href="./profile.html">Profile</a></li>
-                        <li><a href="./beer.html">Beer</a></li>
-                        <li><a href="./party.html"> Party</a></li>
-                        <li><a href="./friends.html"> Friends</a></li>
-                        <li><a href="../index.html"> Log Out</a></li>
+                        <li>
+                            <md-button href="./profile.html">Profile</md-button>
+                        </li>
+                        <li>
+                            <md-button href="./beer.html">Beer</md-button>
+                        </li>
+                        <li>
+                            <md-button href="./party.html"> Party</md-button>
+                        </li>
+                        <li>
+                            <md-button href="./friends.html"> Friends</md-button>
+                        </li>
+                        <li>
+                            <md-button href="../index.html"> Log Out</md-button>
+                        </li>
                     </ul>
                 </div>
             </nav>
@@ -59,7 +67,6 @@
 
         <!-- look for beer beer -->
         <div class="container">
-
             <form name="beer">
                 <div class="row">
                     <div class="input-field col s6">
@@ -82,11 +89,11 @@
                         <label for="style">Style</label>
                     </div>
 
-                    <div class="col s6">
-                        <h4>Autofill <a class="btn-floating green"><i class="material-icons">publish</i></a></h4>
-                    </div>
+                    <a>Autofill</a>
 
-                    <a class="waves-effect waves-light btn">Submit</a>
+                    <!-- <a class="btn-floating green"><i class="material-icons">publish</i></a> -->
+
+                    <a class=" pull-right">Submit</a>
                 </div>
             </form>
         </div>
@@ -95,8 +102,9 @@
         <div class="container">
             <div class="row">
                 <div class="input-field col s6">
-                    <a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
-                    <h5>Add to my beers</h5>
+
+                    <a class="btn-floating  waves-effect waves-light red"><i class="fa fa-star fa-5x" aria-hidden="true"></i></a>
+
                 </div>
             </div>
 
@@ -109,6 +117,33 @@
             </div>
 
         </div>
+
+        <table class="highlight bordered responsive-table">
+            <thead>
+                <tr>
+                    <th data-field="name">Beer Name</th>
+                    <th data-field="brewery">Brewery</th>
+                    <th data-field="price">ABN</th>
+                    <th data-field="style">Style</th>
+                    <th data-field="edit"></th>
+                    <th data-field="delete"></th>
+
+                </tr>
+            </thead>
+
+            <tbody ng-repeat="beer in beers | filter:data.searchbeer | filter:data.searchBrewery">
+                <tr>
+                    <td><a href="#">{{beer.name}}</a></td>
+                    <td><a href="#">{{beer.brewery}}</a></td>
+                    <td><a href="#">{{beer.style}}</a></td>
+                    <td><a href="#">{{ beer.price | currency }}</a></td>
+                    <td><a><i class="material-icons">edit</i></a></td>
+                    <td><a><i class="material-icons">delete_forever</i></a></td>
+
+                </tr>
+            </tbody>
+        </table>
+
 
 
         <footer class="page-footer grey darken-4" id="footer">
