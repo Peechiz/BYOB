@@ -13,9 +13,9 @@
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-route.js"></script>
         <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-resource.js"></script>
         <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.js"></script>
-        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-aria.min.js"></script>
+        <!-- <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-aria.min.js"></script>
         <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-messages.min.js"></script>
-        <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.js"></script> -->
 
         <!-- fontawesome -->
         <script src="https://use.fontawesome.com/405a0adae2.js"></script>
@@ -42,18 +42,10 @@
                 <div class="nav-wrapper orange darken-4">
                     <a href="../index.html" class="brand-logo"><i class="fa fa-beer" aria-hidden="true"> BYOB</i></a>
                     <ul id="nav-mobile" class="right hide-on-med-and-down">
-                        <li>
-                            <md-button href="./beer.html">Beer</md-button>
-                        </li>
-                        <li>
-                            <md-button href="./party.html"> Party</md-button>
-                        </li>
-                        <li>
-                            <md-button href="./friends.html"> Friends</md-button>
-                        </li>
-                        <li>
-                            <md-button href="../index.html"> Log Out</md-button>
-                        </li>
+                        <li><a href="./beer.html">Beer</a></li>
+                        <li><a href="./party.html"> Party</a></li>
+                        <li><a href="./friends.html"> Friends</a></li>
+                        <li><a href="../index.html"> Log Out</a></li>
                     </ul>
                 </div>
             </nav>
@@ -73,15 +65,15 @@
                             <h2>Favorite Beers</h2>
                             <ul>
                                 <li>
-                                    <md-button href="" class="card-content" ng-repeat="beer in beers">{{beer.name}}</md-button>
+                                    <a href="" class="card-content" ng-repeat="beer in beers">{{beer.name}}</a>
 
                                 </li>
                             </ul>
 
-                            <md-button class="waves-effect waves-light btn">Save</md-button>
+                            <a class="waves-effect waves-light btn">Save</a>
 
                             <div class="card-action">
-                                <md-button href="#">My Friends</md-button>
+                                <a href="#">My Friends</a>
                             </div>
                         </div>
 

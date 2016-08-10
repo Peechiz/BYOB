@@ -13,9 +13,9 @@
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-route.js"></script>
         <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-resource.js"></script>
         <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.js"></script>
-        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-aria.min.js"></script>
+        <!-- <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-aria.min.js"></script>
         <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-messages.min.js"></script>
-        <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.js"></script> -->
 
         <!-- fontawesome -->
         <script src="https://use.fontawesome.com/405a0adae2.js"></script>
@@ -44,29 +44,32 @@
                     <a href="../index.html" class="brand-logo"><i class="fa fa-beer" aria-hidden="true"> BYOB</i></a>
                     <ul id="nav-mobile" class="right hide-on-med-and-down">
                         <li>
-                            <md-button href="./profile.html">Profile</md-button>
+                            <a href="./profile.html">Profile</a>
                         </li>
                         <li>
-                            <md-button href="./beer.html">Beer</md-button>
+                            <a href="./beer.html">Beer</a>
                         </li>
                         <li>
-                            <md-button href="./party.html"> Party</md-button>
+                            <a href="./party.html"> Party</a>
                         </li>
                         <li>
-                            <md-button href="./friends.html"> Friends</md-button>
+                            <a href="./friends.html"> Friends</a>
                         </li>
                         <li>
-                            <md-button href="../index.html"> Log Out</md-button>
+                            <a href="../index.html"> Log Out</a>
                         </li>
                     </ul>
                 </div>
             </nav>
         </header>
 
-        <h1 class="center">Look for your favorite beer!</h1>
+        <h1 class="center">Looking for your favorite beer!</h1>
 
         <!-- look for beer beer -->
         <div class="container">
+            <p>You can Fill out the form..</p>
+            <br>
+
             <form name="beer">
                 <div class="row">
                     <div class="input-field col s6">
@@ -88,61 +91,56 @@
                         <input id="style" type="text" class="validate">
                         <label for="style">Style</label>
                     </div>
+                    <p>Or </p>
 
-                    <a>Autofill</a>
 
-                    <!-- <a class="btn-floating green"><i class="material-icons">publish</i></a> -->
 
-                    <a class=" pull-right">Submit</a>
+                    <a class="waves-effect waves-light btn">Autofill</a>
+                    <a class="waves-effect waves-light btn pull-right">Submit</a>
                 </div>
             </form>
         </div>
         <!-- =========================== -->
-
-        <div class="container">
-            <div class="row">
-                <div class="input-field col s6">
-
-                    <a class="btn-floating  waves-effect waves-light red"><i class="fa fa-star fa-5x" aria-hidden="true"></i></a>
-
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="input-field col s4">
-                    <i class="material-icons prefix">mode_edit</i>
-                    <label for="icon_prefix2"> Notes</label>
-                    <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
-                </div>
-            </div>
+        <!-- display results -->
+        <!-- =========================== -->
+        <div class="container" ng-repeat="beer in beers | filter:data.searchbeer | filter:data.searchBrewery">
+            <ul class="collapsible" data-collapsible="accordion">
+                <li>
+                    <a class="collapsible-header"><i class="fa fa-beer" aria-hidden="true"></i>{{beer.name}}</a>
+                    <div class="collapsible-body">
+                        <p>Lorem ipsum dolor sit amet.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="collapsible-header"><i class="fa fa-home" aria-hidden="true"></i>{{beer.brewery}}</div>
+                    <div class="collapsible-body">
+                        <p>Lorem ipsum dolor sit amet.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="collapsible-header"><i class="fa fa-tags" aria-hidden="true"></i>{{beer.style}}</div>
+                    <div class="collapsible-body">
+                        <p>Lorem ipsum dolor sit amet.</p>
+                    </div>
+                </li>
+            </ul>
 
         </div>
 
-        <table class="highlight bordered responsive-table">
-            <thead>
-                <tr>
-                    <th data-field="name">Beer Name</th>
-                    <th data-field="brewery">Brewery</th>
-                    <th data-field="price">ABN</th>
-                    <th data-field="style">Style</th>
-                    <th data-field="edit"></th>
-                    <th data-field="delete"></th>
 
-                </tr>
-            </thead>
 
-            <tbody ng-repeat="beer in beers | filter:data.searchbeer | filter:data.searchBrewery">
-                <tr>
-                    <td><a href="#">{{beer.name}}</a></td>
-                    <td><a href="#">{{beer.brewery}}</a></td>
-                    <td><a href="#">{{beer.style}}</a></td>
-                    <td><a href="#">{{ beer.price | currency }}</a></td>
-                    <td><a><i class="material-icons">edit</i></a></td>
+
+
+
+
+        <!-- <td><a class="btn-floating  waves-effect waves-light red"><i class="fa fa-star fa-5x" aria-hidden="true"></i></a></td> -->
+        <!-- <td><a><i class="material-icons">edit</i></a></td>
                     <td><a><i class="material-icons">delete_forever</i></a></td>
-
-                </tr>
-            </tbody>
-        </table>
+                    <td>
+                        <i class="material-icons prefix">mode_edit</i>
+                        <label for="icon_prefix2"> Notes</label>
+                        <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+                    </td> -->
 
 
 
