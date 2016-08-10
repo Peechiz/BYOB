@@ -55,46 +55,39 @@
             </nav>
         </header>
 
-        <h1>Look for your favorite beer!</h1>
+        <h1 class="center">Look for your favorite beer!</h1>
 
-        <!-- add new beer beer -->
-        <div class="row">
-            <form>
+        <!-- look for beer beer -->
+        <div class="container">
+
+            <form name="beer">
                 <div class="row">
                     <div class="input-field col s6">
                         <input id="beer_name" type="text" ng-model="searchbeers">
                         <label for="beer_name">Beer Name</label>
                     </div>
-                </div>
 
-                <div class="row">
                     <div class="input-field col s6">
                         <input id="brewery" type="text" ng-model="searchBreweries">
                         <label for="brewery">Brewery</label>
                     </div>
-                </div>
 
-                <div class="row">
                     <div class="input-field col s6">
                         <input id="abn" type="text">
                         <label for="abn">A.B.N</label>
                     </div>
-                </div>
 
-                <div class="row">
                     <div class="input-field col s6">
                         <input id="style" type="text" class="validate">
                         <label for="style">Style</label>
                     </div>
-                </div>
 
-                <div class="row">
                     <div class="col s6">
                         <h4>Autofill <a class="btn-floating green"><i class="material-icons">publish</i></a></h4>
                     </div>
-                </div>
 
-                <a class="waves-effect waves-light btn">Submit</a>
+                    <a class="waves-effect waves-light btn">Submit</a>
+                </div>
             </form>
         </div>
         <!-- =========================== -->
