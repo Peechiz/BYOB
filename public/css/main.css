@@ -89,6 +89,7 @@ html {
    transition: 300ms cubic-bezier(.4, 0, .2, 1);
    -webkit-transition: 300ms cubic-bezier(.4, 0, .2, 1);
    -ms-transition: 300ms cubic-bezier(.4, 0, .2, 1);
+
 }
 
 .material-button,
@@ -242,6 +243,7 @@ html {
 
 .button.login a:hover {
    color: #ED2553;
+   /*color:green;*/
    /*color: white;*/
    border-color: #ED2553;
 }

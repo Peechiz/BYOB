@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="myApp">
+<html lang="en" ng-app="myApp">
 
     <head>
         <meta charset="utf-8">
@@ -13,7 +13,11 @@
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-route.js"></script>
         <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-resource.js"></script>
         <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.js"></script>
-        <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.js"></script>
+        <!-- <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-aria.min.js"></script> -->
+        <!-- <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-messages.min.js"></script> -->
+        <!-- <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.js"></script> -->
+
+
 
         <!-- fontawesome -->
         <script src="https://use.fontawesome.com/405a0adae2.js"></script>
@@ -30,6 +34,7 @@
 
         <script src="../app.js"></script>
         <script src="../angular.js"></script>
+        <script src="http://api.brewerydb.com/v2/?key=4d9a0f8e023cb078745503782cabc979"></script>
 
 
     </head>
@@ -50,18 +55,21 @@
             </nav>
         </header>
 
+        <h1>Look for your favorite beer!</h1>
+
+        <!-- add new beer beer -->
         <div class="row">
-            <form class="col s12">
+            <form>
                 <div class="row">
                     <div class="input-field col s6">
-                        <input id="beer_name" type="text">
+                        <input id="beer_name" type="text" ng-model="searchbeers">
                         <label for="beer_name">Beer Name</label>
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="input-field col s6">
-                        <input id="brewery" type="text">
+                        <input id="brewery" type="text" ng-model="searchBreweries">
                         <label for="brewery">Brewery</label>
                     </div>
                 </div>
@@ -80,14 +88,17 @@
                     </div>
                 </div>
 
-                <div class="row col s4">
-                    <h3>Autofill <a class="btn-floating green"><i class="material-icons">publish</i></a></h3>
+                <div class="row">
+                    <div class="col s6">
+                        <h4>Autofill <a class="btn-floating green"><i class="material-icons">publish</i></a></h4>
+                    </div>
                 </div>
 
                 <a class="waves-effect waves-light btn">Submit</a>
-
             </form>
         </div>
+        <!-- =========================== -->
+
         <div class="container">
             <div class="row">
                 <div class="input-field col s6">

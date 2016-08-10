@@ -1,7 +1,7 @@
 var app = angular.module( "myApp", [ 'ngRoute' ] );
-//
-console.log( "angular here" );
-//
+
+
+console.log( "angular working here" );
 app.config( function ( $routeProvider ) {
     $routeProvider.when( '/', {
         templateUrl: 'partials/home.html',
@@ -18,35 +18,7 @@ app.config( function ( $routeProvider ) {
         controller: 'BeerController'
     } );
 } );
-//
-// app.controller( 'autocompleteController', autocompleteController );
-//
-// function autocompleteController( $timeout, $q, $log ) {
-//     var self = this;
-//     self.simulateData = false;
-//     self.beer_name = loadBeer_name();
-//     self.beerSearch = beerSearch;
-//     self.brewery = brewery;
-//     self.newBeer = newBeer;
-//
-//     function beerSearch( data ) {
-//         var results = data ? self.beer.filter( createFilterfor( data ) ) : self.beer,
-//             deferred;
-//         console.log( "working around here maybe!" );
-//         if ( self.simulateData ) {
-//             deferred = $q.defer();
-//             $timeout
-//
-//             function () {
-//                 deferred.resolve( results );
-//             },
-//             Math.random() * 1000, false;
-//             return deferred.promise;
-//         } else {
-//             return results;
-//         }
-//     }
-// }
+
 
 app.controller( 'HomeController', function ( $scope ) {
     console.log( 'hey' );
@@ -96,10 +68,21 @@ app.controller( "ProfileController", function ( $scope ) {
 } );
 
 app.controller( 'BeerController', function ( $scope ) {
+
     console.log( "beer here" );
+    $scope.data = {};
+    $scope.data.searchbeers = '';
+    $scope.data.searchBreweries = '';
+
+    function newBeer( beer ) {
+        console.log( "im a new beer!" );
+    }
+
     $scope.hide = function () {
         $scope.showMe = !$scope.showMe;
     }
+
+
 } );
 
 app.controller( 'FriendsController', function ( $scope ) {
