@@ -3,9 +3,31 @@ $( document ).ready( function () {
     $( '.collapsible' ).collapsible( {
         accordion: false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
     } );
+
     console.log( "document is ready here" );
-    //
 } );
+
+$( function () {
+    var availableBeer = [
+      "Zoe",
+      "Tecate",
+      "Dos equis",
+      "Bull Light",
+      "Sierra Nevada"
+   ];
+
+    $( "#availableBeer" ).autocomplete( {
+        minLength: 0,
+        source: availableBeer
+            // focus: function ( event, ui ) {
+            //     $( "#beer" )
+            // }
+    } );
+    console.log( availableBeer );
+} );
+
+
+
 
 
 $( function () {

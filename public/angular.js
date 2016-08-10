@@ -143,10 +143,17 @@ app.controller( 'FriendsController', function ( $scope ) {
         {
             name: 'Erika',
             favorite_beers: [ 'Tecate', ' Leinenkugels' ]
+   },
+        {
+            name: 'Zubair',
+            favorite_beers: [ 'Sierra Nevada' ]
+   },
+        {
+            name: 'Marc',
+            favorite_beers: [ 'Bull Light' ]
    }
    ];
-
-} )
+} );
 
 app.controller( 'partyController', function ( $scope ) {
     console.log( "Lets party" );

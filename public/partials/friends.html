@@ -49,11 +49,11 @@
             </nav>
         </header>
 
-        <div ng-repeat="friend in friends">
-            <div class="container">
+        <div class="container">
+            <div ng-repeat="friend in friends">
                 <ul class="collapsible" data-collapsible="accordion">
                     <li>
-                        <div class="collapsible-header"><i class="material-icons">face</i>{{friend.name}}</div>
+                        <div class="collapsible-header"><i class="material-icons">face</i> {{friend.name}}</div>
                         <div class="collapsible-body">
                             <p>Lorem ipsum dolor sit amet.</p>
                         </div>
@@ -74,7 +74,7 @@
         </div>
         <!-- add new friends -->
         <div class="container">
-            <form name="friends" class="friends_form" action="#" method="POST" novalidate>
+            <form name="newFriends" class="friends_form" action="#" method="POST" novalidate>
                 <div class="row">
                     <div class="input-field col s6">
                         <input id="friends.name" type="text" class="form-control" name="friends.name" ng-model="beer.name" required>
