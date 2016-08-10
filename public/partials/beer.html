@@ -70,25 +70,25 @@
             <p>You can Fill out the form..</p>
             <br>
 
-            <form name="beer">
+            <form name="beer" class="beer_form" action="#" method="POST" novalidate>
                 <div class="row">
                     <div class="input-field col s6">
-                        <input id="beer_name" type="text" ng-model="searchbeers">
+                        <input id="beer_name" type="text" class="form-control" name="beer_name" ng-model="beer.name" required>
                         <label for="beer_name">Beer Name</label>
                     </div>
 
                     <div class="input-field col s6">
-                        <input id="brewery" type="text" ng-model="searchBreweries">
+                        <input id="brewery" type="text" class="form-control" name="brewery" ng-model="brewery" required>
                         <label for="brewery">Brewery</label>
                     </div>
 
                     <div class="input-field col s6">
-                        <input id="abn" type="text">
+                        <input id="abn" type="text" class="form-control" name="beer_abn" ng-model="beer.abn" required>
                         <label for="abn">A.B.N</label>
                     </div>
 
                     <div class="input-field col s6">
-                        <input id="style" type="text" class="validate">
+                        <input id="style" type="text" class="form-control" name="style" ng-model="style" required>
                         <label for="style">Style</label>
                     </div>
                     <p>Or </p>

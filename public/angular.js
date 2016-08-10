@@ -1,6 +1,7 @@
 var app = angular.module( "myApp", [ 'ngRoute' ] );
 
 
+
 console.log( "angular working here" );
 app.config( function ( $routeProvider ) {
     $routeProvider.when( '/', {
@@ -101,10 +102,21 @@ app.controller( 'BeerController', function ( $scope ) {
     $scope.addBeer = function () {
         var newBeer = {};
         newBeer.name = $scope.newBeers.name;
+        newBeer.brewery = $scope.newBeers.brewery;
+        newBeer.style = $scope.newBeers.style;
 
         $scope.newBeers.push( newBeer );
         console.log( "im a new beer!" );
+        reset();
 
+    }
+
+    function reset( something ) {
+        $scope.beer.name = null;
+        $scope.brewery = null;
+        $scope.style = null;
+        $scope.beer.abn = null;
+        console.log( "cleaning the house yo!" );
     }
 
     $scope.hide = function () {
