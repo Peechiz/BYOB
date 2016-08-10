@@ -89,6 +89,12 @@ app.controller( 'BeerController', function ( $scope ) {
             brewery: 'Anheuser-Busch',
             style: 'Witbier',
             abn: 5.00
+     },
+        {
+            name: 'Leinenkugels',
+            brewery: 'Jacob Leinenkugel Brewing Company',
+            style: 'Berliner Weissbier',
+            abn: 3.29
      }
   ];
 
@@ -128,6 +134,18 @@ app.controller( 'BeerController', function ( $scope ) {
 
 app.controller( 'FriendsController', function ( $scope ) {
     console.log( "friends here" );
+
+    $scope.friends = [
+        {
+            name: 'Chris',
+            favorite_beers: [ 'Zoe', 'Sierra Nevada' ]
+   },
+        {
+            name: 'Erika',
+            favorite_beers: [ 'Tecate', ' Leinenkugels' ]
+   }
+   ];
+
 } )
 
 app.controller( 'partyController', function ( $scope ) {

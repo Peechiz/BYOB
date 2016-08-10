@@ -49,6 +49,47 @@
                 </div>
             </nav>
         </header>
+
+        <div ng-repeat="friend in friends">
+            <div class="container">
+                <ul class="collapsible" data-collapsible="accordion">
+                    <li>
+                        <div class="collapsible-header"><i class="material-icons">face</i>{{friend.name}}</div>
+                        <div class="collapsible-body">
+                            <p>Lorem ipsum dolor sit amet.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header"><i class="material-icons">whatshot</i> {{friend.favorite_beers}}</div>
+                        <div class="collapsible-body">
+                            <p>Lorem ipsum dolor sit amet.</p>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+
+        <!-- add new friends -->
+        <div class="container">
+            <form name="friends" class="friends_form" action="#" method="POST" novalidate>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input id="friends.name" type="text" class="form-control" name="friends.name" ng-model="beer.name" required>
+                        <label for="friends.name"> Name</label>
+                    </div>
+
+                    <div class="input-field col s6">
+                        <input id="favorite_beers" type="text" class="form-control" name="favorite_beers" ng-model="favorite_beers" required>
+                        <label for="favorite_beers">Favorite Beers</label>
+                    </div>
+                    <a class="waves-effect waves-light btn pull-right" ng-click="addBeer()">Submit</a>
+                </div>
+            </form>
+
+
+        </div>
+
         <footer class="page-footer grey darken-4" id="footer">
             <div class="container">
                 <div class="footer-social">
