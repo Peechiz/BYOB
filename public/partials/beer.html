@@ -104,31 +104,37 @@
         <!-- display results -->
         <!-- =========================== -->
         <div class="container" ng-repeat="beer in beers | filter:data.searchbeer | filter:data.searchBrewery">
-            <ul class="collapsible" data-collapsible="accordion">
+            <ul class="collapsible popout" data-collapsible="accordion">
                 <li>
-                    <a class="collapsible-header"><i class="fa fa-beer" aria-hidden="true"></i>{{beer.name}}</a>
+                    <a class="collapsible-header popout"><i class="fa fa-beer" aria-hidden="true"></i>{{beer.name}}</a>
+                    <div class="collapsible-body">
+
+                        <p>Lorem ipsum dolor sit amet.
+                            <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a></p>
+                    </div>
+                </li>
+                <li>
+                    <div class="collapsible-header popout"><i class="fa fa-home" aria-hidden="true"></i>{{beer.brewery}}</div>
+                    <div class="collapsible-body">
+                        <p>Lorem ipsum dolor sit amet.</p>
+
+                    </div>
+                </li>
+                <li>
+                    <div class="collapsible-header popout"><i class="fa fa-tags" aria-hidden="true"></i>{{beer.style}}</div>
                     <div class="collapsible-body">
                         <p>Lorem ipsum dolor sit amet.</p>
                     </div>
                 </li>
+
                 <li>
-                    <div class="collapsible-header"><i class="fa fa-home" aria-hidden="true"></i>{{beer.brewery}}</div>
-                    <div class="collapsible-body">
-                        <p>Lorem ipsum dolor sit amet.</p>
-                    </div>
-                </li>
-                <li>
-                    <div class="collapsible-header"><i class="fa fa-tags" aria-hidden="true"></i>{{beer.style}}</div>
+                    <div class="collapsible-header popout"><i class="material-icons">insert_comment</i> Notes</div>
                     <div class="collapsible-body">
                         <p>Lorem ipsum dolor sit amet.</p>
                     </div>
                 </li>
             </ul>
-
         </div>
-
-
-
 
 
 
