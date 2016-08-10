@@ -1,5 +1,8 @@
 $( document ).ready( function () {
     Materialize.updateTextFields();
+    $( '.collapsible' ).collapsible( {
+        accordion: false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
+    } );
     console.log( "document is ready here" );
     //
 } );

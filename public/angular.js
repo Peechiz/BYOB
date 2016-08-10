@@ -96,9 +96,15 @@ app.controller( 'BeerController', function ( $scope ) {
     $scope.data = {};
     $scope.data.searchbeers = '';
     $scope.data.searchBreweries = '';
+    $scope.beers = [];
 
-    function newBeer( beer ) {
+    function addBeer( beer ) {
+        var newBeer = {};
+        newBeer.name = $scope.beer.name;
+
+        $scope.beer.push( newBeer );
         console.log( "im a new beer!" );
+
     }
 
     $scope.hide = function () {
