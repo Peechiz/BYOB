@@ -96,13 +96,13 @@ app.controller( 'BeerController', function ( $scope ) {
     $scope.data = {};
     $scope.data.searchbeers = '';
     $scope.data.searchBreweries = '';
-    $scope.beers = [];
+    $scope.newBeers = [];
 
-    function addBeer( beer ) {
+    $scope.addBeer = function () {
         var newBeer = {};
-        newBeer.name = $scope.beer.name;
+        newBeer.name = $scope.newBeers.name;
 
-        $scope.beer.push( newBeer );
+        $scope.newBeers.push( newBeer );
         console.log( "im a new beer!" );
 
     }
