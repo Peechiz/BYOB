@@ -39,9 +39,6 @@ $( function () {
 } );
 
 
-
-
-
 $( function () {
     console.log( "here here" );
 

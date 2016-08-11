@@ -1,32 +1,33 @@
 var app = angular.module( "myApp", [ 'ngRoute' ] );
 
 
-
-
+var urlUsers = "http://ec2-52-35-89-81.us-west-2.compute.amazonaws.com:9001/users";
+var urlBeers = "http://ec2-52-35-89-81.us-west-2.compute.amazonaws.com:9001/beers"
+console.log( urlUsers );
+console.log( urlBeers );
 console.log( "angular working here" );
-app.config( function ( $routeProvider ) {
-    $routeProvider.when( '/', {
-        templateUrl: 'partials/home.html',
-        controller: 'HomeController'
-    } )
 
-    .when( '/profile', {
+app.config( function ( $routeProvider ) {
+    $routeProvider.when( '/profile', {
         templateUrl: 'partials/profile.html',
         controller: 'ProfileController'
     } )
 
+    .when( '/party', {
+        templateUrl: 'partials/party.html',
+        controller: 'PartyController'
+    } )
+
     .when( '/beer', {
-        templateUrl: '/public/partials/beer.html',
-        controller: 'BeerController'
-    } );
+            templateUrl: 'partials/beer.html',
+            controller: 'BeerController'
+        } )
+        .when( '/users', {
+            templateUrl: 'partials/users.html',
+            controller: 'UserController'
+        } );
 } );
 
-
-app.controller( 'HomeController', function ( $scope ) {
-    console.log( 'hey' );
-    $scope.view = {};
-    $scope.view.message = "testing here!"
-} );
 
 app.controller( "ProfileController", function ( $scope ) {
     console.log( "profile here" );
