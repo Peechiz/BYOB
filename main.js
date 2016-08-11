@@ -2,20 +2,20 @@
 
 const electron = require( 'electron' );
 const { app, BrowserWindow } = electron;
-const ipcMain = require( 'electron' ).ipcMain;
+const ipc = require( 'electron' ).ipc;
+
 
 console.log( "main here yo!" );
+
+let win = null;
 
 app.on( 'ready', () => {
     let win = new BrowserWindow( { width: 1500, height: 800 } );
     win.loadURL( `file://${__dirname}/index.html` );
-    //  win.loadURL( 'http://ec2-52-35-89-81.us-west-2.compute.amazonaws.com:9001/' )
     win.openDevTools();
-    //  console.log( require.resolve( 'electron' ) )
 
     let contents = win.webContents
         //  console.log( contents )
-
 
     win.on( 'closed', () => {
         console.log( "closing" );

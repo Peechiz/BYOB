@@ -1,9 +1,13 @@
-$.getJSON( 'http://ec2-52-35-89-81.us-west-2.compute.amazonaws.com:9001/', {
-    identity: username,
-    device: 'browser'
-}, function ( data ) {
-    console.log( data );
-} );
+function db() {
+    $.ajax( {
+        type: "POST",
+        url: 'http://ec2-52-35-89-81.us-west-2.compute.amazonaws.com:9001/users',
+        data: '',
+        success: function () {
+            console.log( "hello response" );
+        }
+    } )
+};
 
 
 $( document ).ready( function () {
@@ -11,7 +15,7 @@ $( document ).ready( function () {
     $( '.collapsible' ).collapsible( {
         accordion: false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
     } );
-
+    db();
     console.log( "document is ready here" );
 } );
 

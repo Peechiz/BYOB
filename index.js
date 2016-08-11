@@ -1,7 +1,9 @@
 const remote = require( 'electron' ).remote;
+// const remote = require( 'ipc' );
 const main = remote.require( './main.js' );
-// const { app, BrowserWindow } = electron;
-const { ipcRenderer } = require( 'electron' )
+
+
+var ipc = require( 'ipc' );
 
 
 let button = document.createElement( 'button' )
@@ -11,4 +13,4 @@ button.addEventListener( 'click', () => {
 }, false )
 
 button.textContent = 'open window';
-document.body.appendChild( button )
+document.body.appendChild( button );

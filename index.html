@@ -42,7 +42,7 @@
     <body id="main_body">
         <!-- <script src="./angular.js"></script> -->
 
-        <script>
+        <script type="text/javascript" charset="utf-8">
             const alertOnlineStatus = () => {
                 window.alert(navigator.onLine ? 'You are online' : 'offline')
             }
@@ -50,9 +50,12 @@
             window.addEventListener('You are online', alertOnlineStatus)
             window.addEventListener('offline', alertOnlineStatus)
 
-            alertOnlineStatus()
+            alertOnlineStatus();
+            var ipcRenderer = require('electron').ipcRenderer;
+            ipcRenderer.sendSync('send-sync-message', 'message');
 
         </script>
+
 
         <nav>
             <div class="nav-wrapper">
@@ -116,18 +119,7 @@
                 </div>
             </div>
         </div>
-        <script>
-            document.write(process.versions.node)
 
-        </script>
-        <script>
-            document.write(process.versions.chrome)
-
-        </script>
-        <script>
-            document.write(process.versions.electron)
-
-        </script>
     </body>
 
 </html>
