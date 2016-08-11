@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
         <title>profile</title>
+
         <script>
             window.nodeRequire = require;
             delete window.require;
@@ -13,6 +14,7 @@
             delete window.module;
 
         </script>
+
         <!-- jquery -->
         <script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
         <!-- jquery UI -->
@@ -36,7 +38,7 @@
         <link href="https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900&subset=latin,latin-ext" rel="stylesheet">
 
         <link rel="stylesheet" href="../css/main.css">
-
+        <script src="./index.js"></script>
         <script src="../app.js"></script>
         <script src="../angular.js"></script>
 
@@ -44,6 +46,20 @@
     </head>
 
     <body ng-controller="BeerController as myApp">
+
+        <script type="text/javascript" charset="utf-8">
+            // const alertOnlineStatus = () => {
+            //     window.alert(navigator.onLine ? 'You are online' : 'offline')
+            // }
+            //
+            // window.addEventListener('You are online', alertOnlineStatus)
+            // window.addEventListener('offline', alertOnlineStatus)
+            //
+            // alertOnlineStatus();
+            var ipcRenderer = require('electron').ipcRenderer;
+            ipcRenderer.sendSync('send-sync-message', 'message');
+
+        </script>
         <header>
             <nav>
                 <div class="nav-wrapper orange darken-4">

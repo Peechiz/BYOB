@@ -4,7 +4,7 @@ function db() {
         url: 'http://ec2-52-35-89-81.us-west-2.compute.amazonaws.com:9001/users',
         data: '',
         success: function () {
-            console.log( "hello response" );
+            console.log( "hello Erika" );
         }
     } )
 };

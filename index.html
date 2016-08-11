@@ -44,7 +44,7 @@
 
         <script type="text/javascript" charset="utf-8">
             const alertOnlineStatus = () => {
-                window.alert(navigator.onLine ? 'You are online' : 'offline')
+                // window.alert(navigator.onLine ? 'You are online' : 'offline')
             }
 
             window.addEventListener('You are online', alertOnlineStatus)
@@ -53,6 +53,10 @@
             alertOnlineStatus();
             var ipcRenderer = require('electron').ipcRenderer;
             ipcRenderer.sendSync('send-sync-message', 'message');
+            // ipcRenderer.on('message', function(event, arg) {
+            //     event.sender.send('message', arg);
+            // });
+            console.log("process");
 
         </script>
 

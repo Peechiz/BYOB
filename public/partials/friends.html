@@ -41,6 +41,20 @@
     </head>
 
     <body ng-controller="FriendsController as myApp">
+
+        <script type="text/javascript" charset="utf-8">
+            const alertOnlineStatus = () => {
+                window.alert(navigator.onLine ? 'You are online' : 'offline')
+            }
+
+            window.addEventListener('You are online', alertOnlineStatus)
+            window.addEventListener('offline', alertOnlineStatus)
+
+            alertOnlineStatus();
+            var ipcRenderer = require('electron').ipcRenderer;
+            ipcRenderer.sendSync('send-sync-message', 'message');
+
+        </script>
         <header>
             <nav>
                 <div class="nav-wrapper orange darken-4">
