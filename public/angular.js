@@ -2,6 +2,7 @@ var app = angular.module( "myApp", [ 'ngRoute' ] );
 
 
 
+
 console.log( "angular working here" );
 app.config( function ( $routeProvider ) {
     $routeProvider.when( '/', {

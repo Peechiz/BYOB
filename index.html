@@ -42,7 +42,17 @@
     <body id="main_body">
         <!-- <script src="./angular.js"></script> -->
 
+        <script>
+            const alertOnlineStatus = () => {
+                window.alert(navigator.onLine ? 'You are online' : 'offline')
+            }
 
+            window.addEventListener('You are online', alertOnlineStatus)
+            window.addEventListener('offline', alertOnlineStatus)
+
+            alertOnlineStatus()
+
+        </script>
 
         <nav>
             <div class="nav-wrapper">

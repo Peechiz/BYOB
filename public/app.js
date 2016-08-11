@@ -1,3 +1,11 @@
+$.getJSON( 'http://ec2-52-35-89-81.us-west-2.compute.amazonaws.com:9001/', {
+    identity: username,
+    device: 'browser'
+}, function ( data ) {
+    console.log( data );
+} );
+
+
 $( document ).ready( function () {
     Materialize.updateTextFields();
     $( '.collapsible' ).collapsible( {
