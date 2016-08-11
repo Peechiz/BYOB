@@ -10,6 +10,9 @@ app.on( 'ready', () => {
     let win = new BrowserWindow( { width: 900, height: 800 } );
     win.loadURL( `file://${__dirname}/index.html` );
     win.openDevTools();
+    webPreferences: {
+        nodeIntegration: false
+    }
 
 
     win.on( 'closed', function () {
