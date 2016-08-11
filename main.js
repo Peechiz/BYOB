@@ -1,7 +1,7 @@
 'use strict'
 
 const electron = require( 'electron' );
-const { app, BrowserWindow } = electron;
+const { app, BrowserWindow, Tray } = electron;
 const ipcMain = require( 'electron' ).ipcMain;
 
 console.log( "main here yo!" );
@@ -10,17 +10,24 @@ app.on( 'ready', () => {
     let win = new BrowserWindow( { width: 900, height: 800 } );
     win.loadURL( `file://${__dirname}/index.html` );
     win.openDevTools();
-    webPreferences: {
-        nodeIntegration: false
-    }
+    //  console.log( require.resolve( 'electron' ) )
+
+    let contents = win.webContents
+        //  console.log( contents )
 
 
-    win.on( 'closed', function () {
+
+    win.on( 'closed', () => {
         console.log( "closing" );
         win = null;
     } );
 } );
 
+app.on( 'login', ( event, webContents, request, authInfo, callback ) => {
+    event.preventDefault()
+    callback( 'username', 'secret' )
+    console.log( "login" );
+} );
 
 
 exports.openWindow = () => {

@@ -6,6 +6,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
         <title>BYOB</title>
+        <script>
+            window.nodeRequire = require;
+            delete window.require;
+            delete window.exports;
+            delete window.module;
+
+        </script>
         <!-- google icon -->
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
@@ -34,6 +41,8 @@
 
     <body id="main_body">
         <!-- <script src="./angular.js"></script> -->
+
+
 
         <nav>
             <div class="nav-wrapper">
@@ -97,6 +106,18 @@
                 </div>
             </div>
         </div>
+        <script>
+            document.write(process.versions.node)
+
+        </script>
+        <script>
+            document.write(process.versions.chrome)
+
+        </script>
+        <script>
+            document.write(process.versions.electron)
+
+        </script>
     </body>
 
 </html>
