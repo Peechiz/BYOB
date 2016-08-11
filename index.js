@@ -1,9 +1,8 @@
 const remote = require( 'electron' ).remote;
 const main = remote.require( './main.js' );
+// console.log( "index.js working here" );
 
 var ipc = require( 'ipc' );
-
-console.log( "index.js working here" );
 
 let button = document.createElement( 'button' )
 

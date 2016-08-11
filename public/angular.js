@@ -1,5 +1,16 @@
 var app = angular.module( "myApp", [ 'ngRoute' ] );
 
+// function db() {
+//     $.ajax( {
+//         type: "POST",
+//         url: 'http://ec2-52-35-89-81.us-west-2.compute.amazonaws.com:9001/users',
+//         data: '',
+//         success: function () {
+//             console.log( "hello Erika" );
+//         }
+//     } )
+// };
+
 
 var urlUsers = "http://ec2-52-35-89-81.us-west-2.compute.amazonaws.com:9001/users";
 var urlBeers = "http://ec2-52-35-89-81.us-west-2.compute.amazonaws.com:9001/beers"
@@ -159,4 +170,26 @@ app.controller( 'FriendsController', function ( $scope ) {
 
 app.controller( 'partyController', function ( $scope ) {
     console.log( "Lets party" );
-} )
+} );
+
+app.controller( 'UserController', function ( $scope, $http ) {
+    console.log( "user here" );
+    $scope.data = null;
+    $scope.dataService = null;
+    $scope.search = 'users';
+    var users = [];
+    $http.defaults.headers.common[ "X-Custom-Header" ] = "Angular.js";
+
+
+
+    $http.get( "http://ec2-52-35-89-81.us-west-2.compute.amazonaws.com:9001/users" )
+        .success( function ( data, status, headers, config ) {
+
+            // config.EnableCors();
+
+            // dataType: 'jsonp',
+            $scope.users = data;
+            console.log( data );
+        } );
+
+} );

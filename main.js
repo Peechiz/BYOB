@@ -12,7 +12,13 @@ console.log( "main here yo!" );
 let win = null;
 
 app.on( 'ready', () => {
-    let win = new BrowserWindow( { width: 1500, height: 800 } );
+    let win = new BrowserWindow( {
+        width: 1500,
+        height: 800,
+        webPreferences: {
+            nodeIntegration: true
+        }
+    } );
     win.loadURL( `file://${__dirname}/index.html` );
     win.openDevTools();
 
