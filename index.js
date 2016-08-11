@@ -1,5 +1,8 @@
 const remote = require( 'electron' ).remote;
 const main = remote.require( './main.js' );
+// const { app, BrowserWindow } = electron;
+const { ipcRenderer } = require( 'electron' )
+
 
 let button = document.createElement( 'button' )
 
