@@ -1,17 +1,5 @@
 var app = angular.module( "myApp", [ 'ngRoute' ] );
 
-// function db() {
-//     $.ajax( {
-//         type: "POST",
-//         url: 'http://ec2-52-35-89-81.us-west-2.compute.amazonaws.com:9001/users',
-//         data: '',
-//         success: function () {
-//             console.log( "hello Erika" );
-//         }
-//     } )
-// };
-
-
 var urlUsers = "http://ec2-52-35-89-81.us-west-2.compute.amazonaws.com:9001/users";
 var urlBeers = "http://ec2-52-35-89-81.us-west-2.compute.amazonaws.com:9001/beers"
 console.log( urlUsers );
@@ -81,37 +69,29 @@ app.controller( "ProfileController", function ( $scope ) {
 
 } );
 
-app.controller( 'BeerController', function ( $scope ) {
+app.controller( 'BeerController', function ( $scope, $http ) {
+    var result;
+    var url = 'http://api.brewerydb.com/v2/beers/?key=4d9a0f8e023cb078745503782cabc979&name=Zoe';
+    $http.get( url )
+        .success( function ( data, status, headers, config ) {
+            $scope.beers = data.data;
+            console.log( data );
+        } );
 
-    $scope.beers = [
-        {
-            name: 'Zoe',
-            brewery: 'Hops and Grain Brewing',
-            style: 'Amber',
-            abn: 3.50
-     },
+    $scope.sendPost = function () {
+        var data = $.param( {
+            json: JSON.stringify( {
+                name: $scope.beer.name
+            } )
+        } )
 
-        {
-            name: 'Sierra Nevada',
-            brewery: 'Sierra Nevada Brewery',
-            style: 'Pale Ale',
-            abn: 4.00
-     },
-        {
-            name: 'Shock Top Belgium Wht',
-            brewery: 'Anheuser-Busch',
-            style: 'Witbier',
-            abn: 5.00
-     },
-        {
-            name: 'Leinenkugels',
-            brewery: 'Jacob Leinenkugel Brewing Company',
-            style: 'Berliner Weissbier',
-            abn: 3.29
-     }
-  ];
-
-
+        result = $http.post( '../beer.html', data )
+            .success( function ( data, status ) {
+                result = data;
+                console.log( result );
+            } );
+        return result;
+    }
     console.log( "beer here" );
     $scope.data = {};
     $scope.data.searchbeers = '';
@@ -192,4 +172,4 @@ app.controller( 'UserController', function ( $scope, $http ) {
             console.log( data );
         } );
 
-} );
+} );;

@@ -1,13 +1,13 @@
-function db() {
-    $.ajax( {
-        type: "POST",
-        url: 'http://ec2-52-35-89-81.us-west-2.compute.amazonaws.com:9001/users',
-        data: '',
-        success: function () {
-            console.log( "hello Erika" );
-        }
-    } )
-};
+// function db() {
+//     $.ajax( {
+//         type: "POST",
+//         url: 'http://ec2-52-35-89-81.us-west-2.compute.amazonaws.com:9001/users',
+//         data: '',
+//         success: function () {
+//             console.log( "hello Erika" );
+//         }
+//     } )
+// };
 
 
 $( document ).ready( function () {
@@ -15,28 +15,28 @@ $( document ).ready( function () {
     $( '.collapsible' ).collapsible( {
         accordion: false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
     } );
-    db();
+    //  db();
     console.log( "document is ready here" );
 } );
 
-$( function () {
-    var availableBeer = [
-      "Zoe",
-      "Tecate",
-      "Dos equis",
-      "Bull Light",
-      "Sierra Nevada"
-   ];
-
-    $( "#availableBeer" ).autocomplete( {
-        minLength: 0,
-        source: availableBeer
-            // focus: function ( event, ui ) {
-            //     $( "#beer" )
-            // }
-    } );
-    console.log( availableBeer );
-} );
+// $( function () {
+//     var availableBeer = [
+//       "Zoe",
+//       "Tecate",
+//       "Dos equis",
+//       "Bull Light",
+//       "Sierra Nevada"
+//    ];
+//
+//     $( "#availableBeer" ).autocomplete( {
+//         minLength: 0,
+//         source: availableBeer
+//             // focus: function ( event, ui ) {
+//             //     $( "#beer" )
+//             // }
+//     } );
+//     console.log( availableBeer );
+// } );
 
 
 $( function () {

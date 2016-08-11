@@ -138,6 +138,7 @@
                         </p>
                     </div>
                 </li>
+
                 <li>
                     <div class="collapsible-header popout"><i class="fa fa-home" aria-hidden="true"></i>{{beer.brewery}}</div>
                     <div class="collapsible-body">
@@ -145,8 +146,16 @@
 
                     </div>
                 </li>
+
                 <li>
-                    <div class="collapsible-header popout"><i class="fa fa-tags" aria-hidden="true"></i>{{beer.style}}</div>
+                    <div class="collapsible-header popout"><i class="fa fa-tags" aria-hidden="true"></i>{{beer.style.name}}</div>
+                    <div class="collapsible-body">
+                        <p>Lorem ipsum dolor sit amet.</p>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="collapsible-header popout"><i class="fa fa-tags" aria-hidden="true"></i>{{beer.abv}}</div>
                     <div class="collapsible-body">
                         <p>Lorem ipsum dolor sit amet.</p>
                     </div>
