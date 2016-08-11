@@ -87,14 +87,14 @@
         <h1 class="center">Are you looking for your favorite beer?</h1>
 
         <!-- look for beer beer -->
-        <div class="ui-widget">
+        <div class="ui-widget container">
             <p>You can Fill out the form..</p>
             <br>
 
-            <form name="beer" action="#" method="POST" autocomplete="on">
+            <form id="availableBeer" name="beer" action="#" method="POST" autocomplete="on">
                 <div class="row">
                     <div class="input-field col s6">
-                        <input id="availableBeer" type="text" class="form-control" name="beer_name" ng-model="beer.name" required>
+                        <input id="" type="text" class="form-control" name="beer_name" ng-model="beer.name" required>
                         <label for="beer_name">Beer Name</label>
                     </div>
 
@@ -123,7 +123,7 @@
         <!-- =========================== -->
         <!-- display results -->
         <!-- =========================== -->
-        <div class="container" ng-repeat="beer in beers">
+        <div class="container" ng-repeat="beer in data">
             <ul class="collapsible popout" data-collapsible="accordion">
                 <li>
                     <a class="collapsible-header popout"><i class="fa fa-beer" aria-hidden="true"></i>{{beer.name}}</a>

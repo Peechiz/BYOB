@@ -19,25 +19,6 @@ $( document ).ready( function () {
     console.log( "document is ready here" );
 } );
 
-// $( function () {
-//     var availableBeer = [
-//       "Zoe",
-//       "Tecate",
-//       "Dos equis",
-//       "Bull Light",
-//       "Sierra Nevada"
-//    ];
-//
-//     $( "#availableBeer" ).autocomplete( {
-//         minLength: 0,
-//         source: availableBeer
-//             // focus: function ( event, ui ) {
-//             //     $( "#beer" )
-//             // }
-//     } );
-//     console.log( availableBeer );
-// } );
-
 
 $( function () {
     console.log( "here here" );

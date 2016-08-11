@@ -71,27 +71,37 @@ app.controller( "ProfileController", function ( $scope ) {
 
 app.controller( 'BeerController', function ( $scope, $http ) {
     var result;
-    var url = 'http://api.brewerydb.com/v2/beers/?key=4d9a0f8e023cb078745503782cabc979&name=Zoe';
+    var url = 'http://api.brewerydb.com/v2/?key=4d9a0f8e023cb078745503782cabc979';
     $http.get( url )
         .success( function ( data, status, headers, config ) {
             $scope.beers = data.data;
             console.log( data );
         } );
 
-    $scope.sendPost = function () {
-        var data = $.param( {
-            json: JSON.stringify( {
-                name: $scope.beer.name
-            } )
-        } )
+    $scope.autocomplete = function () {
 
-        result = $http.post( '../beer.html', data )
-            .success( function ( data, status ) {
-                result = data;
-                console.log( result );
-            } );
-        return result;
-    }
+        $( "#availableBeer" ).autocomplete( {
+            minLength: 0,
+            source: 'http://api.brewerydb.com/v2/?key=4d9a0f8e023cb078745503782cabc979'
+
+        } );
+        console.log( 'availableBeer' );
+    };
+
+    //  $scope.sendPost = function () {
+    //      var data = $.param( {
+    //          json: JSON.stringify( {
+    //              name: $scope.beer.name
+    //          } )
+    //      } )
+    //
+    //      result = $http.post( '../beer.html', data )
+    //          .success( function ( data, status ) {
+    //              result = data;
+    //              console.log( result );
+    //          } );
+    //      return result;
+    //  }
     console.log( "beer here" );
     $scope.data = {};
     $scope.data.searchbeers = '';
