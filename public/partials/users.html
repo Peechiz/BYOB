@@ -87,11 +87,34 @@
 
         <div class="container">
 
+            <!-- add new users -->
             <form name="usersForm" method="POST" novalidate>
                 <label for="user_name">User Name</label>
                 <input id="user_name" type="text" class="form-control" name="user_name" ng-model="new_user">
 
+                <label for="beer">Beers</label>
+                <input id="beer" type="text" class="form-control" name="beer" ng-model="user_beer">
+                <a class="waves-effect waves-light btn">Save</a>
             </form>
+
+            <!-- display users -->
+            <div ng-repeat="user in users" class="row">
+                <div class="col s6">
+                    <div class="card">
+                        <span class="card-title">{{user.name}}</span>
+                        <div class="card-image">
+                            <img ng-src="{{}}">
+                        </div>
+                        <div class="card-content">
+                            <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="#">This is a link</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </body>
 
