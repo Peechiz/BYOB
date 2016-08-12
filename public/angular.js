@@ -37,27 +37,27 @@ app.controller( "ProfileController", function ( $scope ) {
     $scope.data.searchbeer = '';
     $scope.data.searchBrewery = '';
 
-    $scope.beers = [
-        {
-            name: 'Zoe',
-            brewery: 'Hops and Grain Brewing',
-            style: 'Amber',
-            abn: 3.50
-      },
-
-        {
-            name: 'Sierra Nevada',
-            brewery: 'Sierra Nevada Brewery',
-            style: 'Pale Ale',
-            abn: 4.00
-      },
-        {
-            name: 'Shock Top Belgium Wht',
-            brewery: 'Anheuser-Busch',
-            style: 'Witbier',
-            abn: 5.00
-      }
-   ];
+    //  $scope.beers = [
+    //      {
+    //          name: 'Zoe',
+    //          brewery: 'Hops and Grain Brewing',
+    //          style: 'Amber',
+    //          abn: 3.50
+    //    },
+    //
+    //      {
+    //          name: 'Sierra Nevada',
+    //          brewery: 'Sierra Nevada Brewery',
+    //          style: 'Pale Ale',
+    //          abn: 4.00
+    //    },
+    //      {
+    //          name: 'Shock Top Belgium Wht',
+    //          brewery: 'Anheuser-Busch',
+    //          style: 'Witbier',
+    //          abn: 5.00
+    //    }
+    // ];
 
     $scope.hide = function () {
         $scope.showMe = !$scope.showMe;
@@ -71,7 +71,7 @@ app.controller( "ProfileController", function ( $scope ) {
 
 app.controller( 'BeerController', function ( $scope, $http ) {
     var result;
-    var url = 'http://api.brewerydb.com/v2/?key=4d9a0f8e023cb078745503782cabc979';
+    var url = 'http://api.brewerydb.com/v2/styles?key=4d9a0f8e023cb078745503782cabc979&format=json/';
     $http.get( url )
         .success( function ( data, status, headers, config ) {
             $scope.beers = data.data;
@@ -82,7 +82,7 @@ app.controller( 'BeerController', function ( $scope, $http ) {
 
         $( "#availableBeer" ).autocomplete( {
             minLength: 0,
-            source: 'http://api.brewerydb.com/v2/?key=4d9a0f8e023cb078745503782cabc979'
+            source: 'http://api.brewerydb.com/v2/styles?key=4d9a0f8e023cb078745503782cabc979&format=json/'
 
         } );
         console.log( 'availableBeer' );
@@ -135,27 +135,19 @@ app.controller( 'BeerController', function ( $scope, $http ) {
 
 } );
 
-app.controller( 'FriendsController', function ( $scope ) {
+app.controller( 'FriendsController', function ( $scope, $http ) {
     console.log( "friends here" );
 
-    $scope.friends = [
-        {
-            name: 'Chris',
-            favorite_beers: [ 'Zoe', 'Sierra Nevada' ]
-   },
-        {
-            name: 'Erika',
-            favorite_beers: [ 'Tecate', ' Leinenkugels' ]
-   },
-        {
-            name: 'Zubair',
-            favorite_beers: [ 'Sierra Nevada' ]
-   },
-        {
-            name: 'Marc',
-            favorite_beers: [ 'Bull Light' ]
-   }
-   ];
+    //  $scope.friends = [];
+
+    var result;
+    var url = 'http://ec2-52-35-89-81.us-west-2.compute.amazonaws.com:9001/users';
+    $http.get( url )
+        .success( function ( data, status, headers, config ) {
+            $scope.friends = data;
+            console.log( $scope.friends );
+        } );
+
 } );
 
 app.controller( 'partyController', function ( $scope ) {
