@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <title>profile</title>
+
+        <script>
+            window.nodeRequire = require;
+            delete window.require;
+            delete window.exports;
+            delete window.module;
+
+        </script>
+
+        <!-- jquery -->
+        <script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
+        <!-- jquery UI -->
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
+        <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js" integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E=" crossorigin="anonymous"></script>
+        <!-- AngularJs -->
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-route.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-resource.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.js"></script>
+
+        <!-- fontawesome -->
+        <script src="https://use.fontawesome.com/405a0adae2.js"></script>
+        <!-- google icons -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!--  Compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900&subset=latin,latin-ext" rel="stylesheet">
+
+        <link rel="stylesheet" href="../css/main.css">
+        <script src="../../index.js"></script>
+        <script src="../app.js"></script>
+        <script src="../angular.js"></script>
+
+    </head>
+
+    <body ng-controller="BeerController as myApp">
+
+        <script type="text/javascript" charset="utf-8">
+            // const alertOnlineStatus = () => {
+            //     window.alert(navigator.onLine ? 'You are online' : 'offline')
+            // }
+            //
+            // window.addEventListener('You are online', alertOnlineStatus)
+            // window.addEventListener('offline', alertOnlineStatus)
+            //
+            // alertOnlineStatus();
+            var ipcRenderer = require('electron').ipcRenderer;
+            ipcRenderer.sendSync('send-sync-message', 'message');
+
+        </script>
+        <header>
+            <nav>
+                <div class="nav-wrapper orange darken-4">
+                    <a href="../../index.html" class="brand-logo"><i class="fa fa-beer" aria-hidden="true"> BYOB</i></a>
+                    <ul id="nav-mobile" class="right hide-on-med-and-down">
+                        <li>
+                            <a href="./profile.html">Profile</a>
+                        </li>
+                        <li>
+                            <a href="./beer.html">Beer</a>
+                        </li>
+                        <li>
+                            <a href="./party.html"> Party</a>
+                        </li>
+                        <li>
+                            <a href="./friends.html"> Friends</a>
+                        </li>
+                        <li>
+                            <a href="../../index.html"> Log Out</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <h1 class="center">Are you looking for your favorite beer?</h1>
+
+        <!-- look for beer beer -->
+        <div class="ui-widget container">
+            <!-- <p>You can Fill out the form..</p> -->
+            <br>
+
+            <form id="availableBeer" name="beer" action="#" method="POST" autocomplete="on">
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input id="" type="text" class="form-control" name="beer_name" ng-model="beer.name" required>
+                        <label for="beer_name">Beer Name</label>
+                    </div>
+
+                    <div class="input-field col s6">
+                        <input id="brewery" type="text" class="form-control" name="brewery" ng-model="brewery" required>
+                        <label for="brewery">Brewery</label>
+                    </div>
+
+                    <div class="input-field col s6">
+                        <input id="abn" type="text" class="form-control" name="beer_abn" ng-model="beer.abn" required>
+                        <label for="abn">A.B.N</label>
+                    </div>
+
+                    <div class="input-field col s6">
+                        <input id="style" type="text" class="form-control" name="style" ng-model="style" required>
+                        <label for="style">Style</label>
+                    </div>
+                    <!-- <p>Or </p> -->
+
+                    <!-- <a class="waves-effect waves-light btn">Autofill</a> -->
+                    <a class="waves-effect waves-light btn pull-right" ng-click="addBeer()">Submit</a>
+                </div>
+            </form>
+        </div>
+
+        <!-- =========================== -->
+        <!-- display results -->
+        <!-- =========================== -->
+        <div class="container" ng-repeat="beer in data">
+            <ul class="collapsible popout" data-collapsible="accordion">
+                <li>
+                    <a class="collapsible-header popout"><i class="fa fa-beer" aria-hidden="true"></i>{{beer.name}}</a>
+                    <div class="collapsible-body">
+                        <p>Lorem ipsum dolor sit amet.
+                            <div class="horizontal">
+                                <ul>
+                                    <li><a class="btn-floating btn waves-effect waves-light red"><i class="material-icons">grade</i></a> Add to my Favorites</li>
+                                    <li><a class="btn-floating btn waves-effect waves-light red"><i class="material-icons">add</i></a> Add to my beer</li>
+                                </ul>
+                            </div>
+                        </p>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="collapsible-header popout"><i class="fa fa-home" aria-hidden="true"></i>{{beer.brewery}}</div>
+                    <div class="collapsible-body">
+                        <p>Lorem ipsum dolor sit amet.</p>
+
+                    </div>
+                </li>
+
+                <li>
+                    <div class="collapsible-header popout"><i class="fa fa-tags" aria-hidden="true"></i>{{beer.style.name}}</div>
+                    <div class="collapsible-body">
+                        <p>Lorem ipsum dolor sit amet.</p>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="collapsible-header popout"><i class="fa fa-tags" aria-hidden="true"></i>{{beer.abv}}</div>
+                    <div class="collapsible-body">
+                        <p>Lorem ipsum dolor sit amet.</p>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="collapsible-header popout"><i class="material-icons">insert_comment</i> Notes</div>
+                    <div class="collapsible-body">
+                        <p>Lorem ipsum dolor sit amet.</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+
+
+        <footer class="page-footer grey darken-4" id="footer">
+            <div class="container">
+                <div class="footer-social">
+                    <ul class="footer-social">
+                        <li class="wow animated zoomIn"><a href="https://www.facebook.com/"><i class="fa fa-thumbs-up fa-3x"></i></a></li>
+                        <li class="wow animated zoomIn" data-wow-delay="0.3s"><a href="https://twitter.com"><i class="fa fa-twitter fa-3x"></i></a></li>
+                        <li class="wow animated zoomIn" data-wow-delay="0.3s"><a href="https://www.instagram.com"><i class="fa fa-instagram fa-3x"></i></a></li>
+                    </ul>
+                    <p class="copyright">Copyright &copy; 2016 Design and Developed By Chris Impicciche and Erika Angarita</p>
+                </div>
+            </div>
+        </footer>
+
+    </body>
+
+</html>

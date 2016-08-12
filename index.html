@@ -1,11 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>BYOB</title>
-</head>
-<body>
-  <h1>hello world</h1>
-  <script>require('./index.js')</script>
-</body>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <title>BYOB</title>
+        <script>
+            window.nodeRequire = require;
+            delete window.require;
+            delete window.exports;
+            delete window.module;
+
+        </script>
+        <!-- google icon -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+        <!-- jquery -->
+        <script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
+
+        <!-- fontawesome -->
+        <script src="https://use.fontawesome.com/405a0adae2.js"></script>
+
+        <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900&subset=latin,latin-ext" rel="stylesheet">
+        <link rel="stylesheet" href="./public/css/main.css">
+        <script src="./public/app.js"></script>
+        <script src="./index.js"></script>
+
+
+    </head>
+
+    <body id="main_body">
+        <!-- <script src="./angular.js"></script> -->
+        <script type="text/javascript" charset="utf-8">
+            const alertOnlineStatus = () => {
+                // window.alert(navigator.onLine ? 'You are online' : 'offline')
+            }
+
+            window.addEventListener('You are online', alertOnlineStatus)
+            window.addEventListener('offline', alertOnlineStatus)
+
+            alertOnlineStatus();
+            var ipcRenderer = require('electron').ipcRenderer;
+            ipcRenderer.sendSync('send-sync-message', 'message');
+            // ipcRenderer.on('message', function(event, arg) {
+            //     event.sender.send('message', arg);
+            // });
+            console.log("process");
+
+        </script>
+
+        <nav>
+            <div class="nav-wrapper">
+                <a href="./index.html" class="brand-logo"><i class="fa fa-beer" aria-hidden="true"> BYOB</i></a>
+                <ul class="right">
+                    <li><a href=""><i class="material-icons left">local_drink</i> Beer</a></li>
+                    <li><a href=""><i class="fa fa-music fa-2x left" aria-hidden="true"></i> Party</a></li>
+                    <li><a href="./public/partials/users.html"><i class="material-icons right">people</i> Profile</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="materialContainer">
+            <div class="box">
+                <div class="title">LOGIN</div>
+                <div class="input">
+                    <label for="name">Username</label>
+                    <input type="text" name="name" id="name">
+                    <span class="spin"></span>
+                </div>
+
+                <div class="input">
+                    <label for="pass">Password</label>
+                    <input type="password" name="pass" id="pass">
+                    <span class="spin"></span>
+                </div>
+
+                <div class="button login">
+                    <a href="./public/partials/profile.html"><span>GO</span> <i class="fa fa-check"></i></a>
+                </div>
+
+                <a href="" class="pass-forgot">Forgot your password?</a>
+
+            </div>
+
+            <div class="overbox">
+                <div class="material-button alt-2"><span class="shape"></span></div>
+
+                <div class="title">REGISTER</div>
+
+                <div class="input">
+                    <label for="regname">Username</label>
+                    <input type="text" name="regname" id="regname">
+                    <span class="spin"></span>
+                </div>
+
+                <div class="input">
+                    <label for="regpass">Password</label>
+                    <input type="password" name="regpass" id="regpass">
+                    <span class="spin"></span>
+                </div>
+
+                <div class="input">
+                    <label for="reregpass">Repeat Password</label>
+                    <input type="password" name="reregpass" id="reregpass">
+                    <span class="spin"></span>
+                </div>
+
+                <div class="button">
+                    <button><span>NEXT</span></button>
+
+                </div>
+            </div>
+        </div>
+
+    </body>
+
 </html>

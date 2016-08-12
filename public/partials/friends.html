@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <title>profile</title>
+        <script>
+            window.nodeRequire = require;
+            delete window.require;
+            delete window.exports;
+            delete window.module;
+
+        </script>
+        <!-- jquery -->
+        <script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
+        <!-- AngularJs -->
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-route.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-resource.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.js"></script>
+
+        <!-- fontawesome -->
+        <script src="https://use.fontawesome.com/405a0adae2.js"></script>
+        <!-- google icons -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+        <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900&subset=latin,latin-ext" rel="stylesheet">
+
+        <link rel="stylesheet" href="../css/main.css">
+
+        <script src="../app.js"></script>
+        <script src="../angular.js"></script>
+        <script src="../../index.js"></script>
+
+
+
+    </head>
+
+    <body ng-controller="FriendsController as myApp">
+
+        <script type="text/javascript" charset="utf-8">
+            // const alertOnlineStatus = () => {
+            //     window.alert(navigator.onLine ? 'You are online' : 'offline')
+            // }
+
+            // window.addEventListener('You are online', alertOnlineStatus)
+            // window.addEventListener('offline', alertOnlineStatus)
+            //
+            // alertOnlineStatus();
+            var ipcRenderer = require('electron').ipcRenderer;
+            ipcRenderer.sendSync('send-sync-message', 'message');
+
+        </script>
+        <header>
+            <nav>
+                <div class="nav-wrapper orange darken-4">
+                    <a href="../../index.html" class="brand-logo"><i class="fa fa-beer" aria-hidden="true"> BYOB</i></a>
+                    <ul id="nav-mobile" class="right hide-on-med-and-down">
+                        <li><a href="./profile.html">Profile</a></li>
+                        <li><a href="./beer.html">Beer</a></li>
+                        <li><a href="./party.html"> Party</a></li>
+                        <li><a href="./friends.html"> Friends</a></li>
+                        <li><a href="../../index.html"> Log Out</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <div class="container">
+            <div ng-repeat="friend in friends">
+                <ul class="collapsible" data-collapsible="accordion">
+                    <li>
+                        <div class="collapsible-header"><i class="material-icons">face</i> {{friend.name}}</div>
+                        <div class="collapsible-body">
+                            <p>Lorem ipsum dolor sit amet.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header"><i class="material-icons">whatshot</i> {{friend.favorite_beers}}</div>
+                        <div class="collapsible-body">
+                            <p>Lorem ipsum dolor sit amet.</p>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+
+        <div class="container">
+            <a href="#">Add new Friends</a>
+        </div>
+        <!-- add new friends -->
+        <div class="container">
+            <form name="newFriends" class="friends_form" action="#" method="POST" novalidate>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input id="friends.name" type="text" class="form-control" name="friends.name" ng-model="beer.name" required>
+                        <label for="friends.name"> Name</label>
+                    </div>
+
+                    <div class="input-field col s6">
+                        <input id="favorite_beers" type="text" class="form-control" name="favorite_beers" ng-model="favorite_beers" required>
+                        <label for="favorite_beers">Favorite Beers</label>
+                    </div>
+                    <a class="waves-effect waves-light btn pull-right" ng-click="addBeer()">Submit</a>
+                </div>
+            </form>
+
+
+        </div>
+
+        <footer class="page-footer grey darken-4" id="footer">
+            <div class="container">
+                <div class="footer-social">
+                    <ul class="footer-social">
+                        <li class="wow animated zoomIn"><a href="https://www.facebook.com/"><i class="fa fa-thumbs-up fa-3x"></i></a></li>
+                        <li class="wow animated zoomIn" data-wow-delay="0.3s"><a href="https://twitter.com"><i class="fa fa-twitter fa-3x"></i></a></li>
+                        <li class="wow animated zoomIn" data-wow-delay="0.3s"><a href="https://www.instagram.com"><i class="fa fa-instagram fa-3x"></i></a></li>
+                    </ul>
+                    <p class="copyright">Copyright &copy; 2016 Design and Developed By Chris Impicciche and Erika Angarita</p>
+                </div>
+            </div>
+        </footer>
+
+    </body>
+
+</html>

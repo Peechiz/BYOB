@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <title>profile</title>
+
+        <script>
+            window.nodeRequire = require;
+            delete window.require;
+            delete window.exports;
+            delete window.module;
+
+        </script>
+
+        <!-- jquery -->
+        <script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
+        <!-- jquery UI -->
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
+        <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js" integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E=" crossorigin="anonymous"></script>
+        <!-- AngularJs -->
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-route.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-resource.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.js"></script>
+
+        <!-- fontawesome -->
+        <script src="https://use.fontawesome.com/405a0adae2.js"></script>
+        <!-- google icons -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!--  Compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900&subset=latin,latin-ext" rel="stylesheet">
+
+        <link rel="stylesheet" href="../css/main.css">
+        <script src="../../index.js"></script>
+        <script src="../app.js"></script>
+        <script src="../angular.js"></script>
+
+    </head>
+
+    <body ng-controller="UserController as myApp">
+
+        <script type="text/javascript" charset="utf-8">
+            // const alertOnlineStatus = () => {
+            //     window.alert(navigator.onLine ? 'You are online' : 'offline')
+            // }
+            //
+            // window.addEventListener('You are online', alertOnlineStatus)
+            // window.addEventListener('offline', alertOnlineStatus)
+            //
+            // alertOnlineStatus();
+            var ipcRenderer = require('electron').ipcRenderer;
+            ipcRenderer.sendSync('send-sync-message', 'message');
+
+        </script>
+        <header>
+            <nav>
+                <div class="nav-wrapper orange darken-4">
+                    <a href="../../index.html" class="brand-logo"><i class="fa fa-beer" aria-hidden="true"> BYOB</i></a>
+                    <ul id="nav-mobile" class="right hide-on-med-and-down">
+                        <li>
+                            <a href="./profile.html">Profile</a>
+                        </li>
+                        <li>
+                            <a href="./beer.html">Beer</a>
+                        </li>
+                        <li>
+                            <a href="./party.html"> Party</a>
+                        </li>
+                        <li>
+                            <a href="./friends.html"> Friends</a>
+                        </li>
+                        <li>
+                            <a href="../../index.html"> Log Out</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <h1>users here!</h1>
+
+        <div class="container">
+
+            <!-- add new users -->
+            <form name="usersForm" method="POST" novalidate>
+                <label for="user_name">User Name</label>
+                <input id="user_name" type="text" class="form-control" name="user_name" ng-model="new_user">
+
+                <label for="beer">Beers</label>
+                <input id="beer" type="text" class="form-control" name="beer" ng-model="user_beer">
+                <a class="waves-effect waves-light btn">Save</a>
+            </form>
+
+            <!-- display users -->
+            <div ng-repeat="user in users" class="row">
+                <div class="col s6">
+                    <div class="card">
+                        <span class="card-title">{{user.name}}</span>
+                        <div class="card-image">
+                            <img ng-src="{{}}">
+                        </div>
+                        <div class="card-content">
+                            <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="#">This is a link</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </body>
+
+</html>
